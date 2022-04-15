@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: bind
+  name: bind
+  namespace: remediation
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bind
+  template:
+    metadata:
+      labels:
+        app: bind
+    spec:
+      containers:
+      - name: bind
+        image: internetsystemsconsortium/bind9:9.18 #last current stable
+        ports:
+        - containerPort: 53
+          name: dns
+        - containerPort: 953
+          name: dns-over-tls
+        volumeMounts:
+        - name: config-option-volume
+          mountPath: /etc/bind/named.conf.options
+          subPath: named.conf.options
+          readOnly: true
+      volumes:
+        - name: config-option-volume
+          configMap:
+            name: bind
+            items:
+            - key: named.conf.options
+              path: named.conf.options

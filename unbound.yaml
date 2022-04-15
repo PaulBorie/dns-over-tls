@@ -1,0 +1,61 @@
+# This file is an example! Do not use before editing it!
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: unbound-main-conf
+  namespace: remediation
+data:
+  unbound.conf: |
+    server:
+        interface: 0.0.0.0
+        interface: ::0
+        access-control: 0.0.0.0/0 allow
+        access-control: ::1 allow
+        access-control: 10.0.0.0/16 allow 
+        access-control: 127.0.0.0/8 allow
+        access-control: 192.168.0.0/16 allow 
+        access-control: 172.16.0.0/12 allow
+        verbosity: 1
+        logfile: /dev/stdout
+        use-syslog: no
+        log-queries: yes
+        do-ip4: yes
+        do-ip6: no
+        do-udp: yes
+        do-tcp: yes
+        
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dns
+  namespace: remediation
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: unbound-dns
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: unbound-dns
+    spec:
+      containers:
+        - image: mvance/unbound
+          imagePullPolicy: IfNotPresent
+          name: dns-unbound
+          ports:
+            - containerPort: 53
+              hostPort: 53
+              protocol: UDP
+          volumeMounts:
+            - name: unbound-main-conf-volume
+              mountPath: /opt/unbound/etc/unbound/unbound.conf
+              subPath: unbound.conf
+      restartPolicy: Always
+      volumes:
+        - name: unbound-main-conf-volume
+          configMap:
+            name: unbound-main-conf

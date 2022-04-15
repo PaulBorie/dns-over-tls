@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: coredns
+  name: coredns-dns-nodeport
+  namespace: remediation
+spec:
+ ports:
+ - port: 53
+   protocol: UDP
+   targetPort: 53
+   nodePort: 30053
+   name: dns
+ - port: 853
+   protocol: TCP
+   targetPort: 853
+   nodePort: 30853
+   name: dns-over-tls
+ selector:
+   app: coredns
+ type: NodePort

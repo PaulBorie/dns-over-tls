@@ -1,0 +1,34 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: key
+  namespace: remediation
+data:
+  key.pem: |
+    -----BEGIN RSA PRIVATE KEY-----
+    MIIEogIBAAKCAQEAuT+XpGcZM0R8bSFOoGz8OHztZcCpE9iOWNUqalgfuN/jFfGU
+    1/GID4789tgmf5sWru4+wvF1KpSEnaq2dWJXiP+5QCeg8CBGCqhEn3fi5fFF4xP6
+    c9q5AN2URsDQYyhQSmCgqPK69l4SVjYkBf7caZmpZxXZE053UFk7kn4pmx4NL0zN
+    Y7J40X1PM8UINjkUfJZWT+HOXxp6cB2vo07VChuzEaOrvbGjFlMKuTFhGoRUWD3U
+    SpGjJJhansipHehpbnOuhz7F7QDp5tLgUkuYp5gGZewKsjHJCjQPIOyawwM8iAC8
+    vgeIkSWRqClRWmhFl7iQNu1tM1nSd/siYSWrkwIDAQABAoIBACPQNYLlI6wTq3J1
+    o/vD1icdj8/CJW3eyfZGj8KrcsaNEhvl7n6pBULsw978/sRguUvsZ1nM0HgA6nqI
+    zGl5L68esTPD9Ys20hOxYELsLIOD150E+cB4IpgWPlpHYIIrAwq+D5FaC+chXK4q
+    HWDDWt1XhbaWNLdUziBMgAXcOjLwkgUX2E4oq2tlsobsYqTeJ2MHNgYEENUSFSJe
+    hWXB5EO2G4l0PdLDLxp5Pgb8nEvPwiKQoLTmz2Ph9e6xblAUDn7gzXIhFs42U4C6
+    +XR3arqcAPY8YUedFR8a3y2C0iXVeU1iuDNcT4q5mrJd9J4aXfTG+Q1pZ21dFVFC
+    OKJA8aECgYEA50kr+4hXjRn4EKDR6dsBi+Dqg/6hsd+UbCx86IK1Dc0aXT2q3Atw
+    YX25XyRrihVNbv8fOGzEanGG+AXy1YtU/XHvbfHT8pX6c5A4c5P5HePLJTDVx1P/
+    mM11t6LNZ6ocOUufj3oVYGPbFoyhuscdXEaBC6NNwbpG8qyoVkZnOTkCgYEAzQsQ
+    6QMPFDTujjXdtbVbQFSTwZAL4ki/wfXN9h55KqfsdVEL8KajAwHcyCWM6oey1fH6
+    DVkvNfpdcPhMKxIvO5ii4HgHMeoYpxeiV2sEyVzR295MdpvGMmpoTWHgAS1bkuCl
+    wvwBSuiw+TBJlCZJLCxiWzqheKlalsQEuf2yhysCgYAgUNwBYDKDd55ujFnoJ/6W
+    Uc3StZBYLxoo5ypovmKX1BGb95LY/gwswwlUnt0bxRA1sxXkp2XmTYiDPSmJ5tbw
+    Nqwym3h2y7fbz8njdEh5gauPvbwRBs6Oxh5tkyTKGD2rT8KypGc6OZmSFAJA+7NB
+    gmRjgOTLbcCeBbvbmiiwGQKBgGVuZ/sczETOuoQXGYpeILn+HOnP/FEAc/vbQPvT
+    r1TupQaUBTgS9ujx7uoDyWXrowg7H9uilrw5EihkbCmSYVM1+rzYI5cJmxBtnJ1q
+    D4AdLqN5oJG8FZuzD83X8Rwj9/z8rIN8bpdD7OgYfw2OsvvrKOzAYEh0Xp/ecAgh
+    /ELpAoGAIrkdX9m8gcPHOOmyRjAOz3/aRYvYH0kn+F/c9W2yTqk/C03VRUWK6ROd
+    9Iuk2ezgsWweyG/gbZad13QbAauDx3p8sx3ZKL9xr7tNSSDmioq8732ypEh2k0Kj
+    cLQS3eNVZOT+ao0A0Xfd1idOkjAda5g1lpNSvT7i3Zyb85ET9Bg=
+    -----END RSA PRIVATE KEY-----

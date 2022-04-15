@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: bind
+  name: bind-service
+  namespace: remediation
+spec:
+  ports:
+  - port: 53
+    name: dns-tcp
+    targetPort: 53
+    protocol: TCP
+  - port: 53
+    name: dns-udp
+    targetPort: 53
+    protocol: UDP
+  - port: 953
+    name: dns-over-tls
+    targetPort: 953
+    protocol: TCP
+  selector:
+    app: bind
